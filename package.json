@@ -1,7 +1,7 @@
 {
   "name": "url-shortener",
   "version": "1.0.0",
-  "description": "URL Shortener Demo",
+  "description": "URL Shortener",
   "main": "src/server.js",
   "scripts": {
     "start": "nodemon src/server.js",
@@ -9,19 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/freshman-tech/url-shortener.git"
+    "url": "git+https://github.com/sanyam99ag/URL_Shortner.git"
   },
   "keywords": [
     "url shortener",
     "mongodb",
     "nodejs"
   ],
-  "author": "Ayo Isaiah",
+  "author": "Sanyam Agarwal",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/freshman-tech/url-shortener/issues"
-  },
-  "homepage": "https://github.com/freshman-tech/url-shortener#readme",
+  "homepage": "https://github.com/sanyam99ag",
   "devDependencies": {
     "nodemon": "^1.19.4"
   },

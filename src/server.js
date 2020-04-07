@@ -6,7 +6,6 @@ const path = require('path');
 const dns = require('dns');
 const { MongoClient } = require('mongodb');
 const nanoid = require('nanoid/generate');
-// const nolookalikes = require('nanoid-dictionary/nolookalikes');
 
 const databaseUrl = process.env.DATABASE;
 
@@ -42,9 +41,10 @@ const shortenURL = (db, url) => {
 
 const checkIfShortIdExists = (db, code) => db.collection('shortenedURLs')
   .findOne({ short_id: code });
-  console.log('check of existing url function call');
+  // console.log('check of existing url function call');
+
 app.get('/', (req, res) => {
-  console.log('index.html get request')
+  // console.log('index.html get request')
   const htmlPath = path.join(__dirname, 'public', 'index.html');
   
   res.sendFile(htmlPath);
