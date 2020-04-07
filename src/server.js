@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-MongoClient.connect(databaseUrl, { useNewUrlParser: true })
+MongoClient.connect(databaseUrl, { useNewUrlParser: true , useUnifiedTopology: true})
   .then(client => {
     console.log('Database connected');
     app.locals.db = client.db('shortener');
@@ -91,7 +91,7 @@ app.get('/:short_id', (req, res) => {
 
 });
 
-app.set('port', process.env.PORT || 4100);
+app.set('port', process.env.PORT || 5100);
 const server = app.listen(app.get('port'), () => {
   console.log(`Express running → PORT ${server.address().port}`);
   console.log(`${server.address().address})`);
