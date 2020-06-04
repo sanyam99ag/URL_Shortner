@@ -12,6 +12,8 @@ mongoose.connect('mongodb://localhost/urlShortener', {
 
 app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: false }))
+app.use(express.static(__dirname + '/public'));
+
 
 app.get('/' , async (req, res) => {
     const shortUrls =  await ShortenUrl.find()

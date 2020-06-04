@@ -1,35 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title>Idex File</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+
+    <title>URL || Shrinker</title>
+
 </head>
+
 <body>
-    
-    <h1>URL Shortener</h1>
-    <form action="/shortenUrl" method="post">
-        <label for="fullUrl" class="sr-only">LONG URL</label>
-        <input type="url" name="fullUrl" id="fullUrl">
-        <input type="submit" value="Shorten">
-    </form>
-    <br>
-    <table>
-        <tr>
-            <th> || Full URL</th>
-            <th> || Shorten</th>
-            <th> || Clicks</th>
-        </tr>
-        {{#each shortUrls}}
-            <tr>
-                <td> || <a href="{{this.full}}">{{this.full}}</a></td>
-                <td> || <a href="{{this.short}}">{{this.short}}</a></td>
-                <td> || <a href="{{this.clicks}}"></a>{{this.clicks}}</td>
-            </tr>
-        {{/each}}
-        
-    </table>
-    
-</body> 
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/images/url||shrinker.png" alt="URL||Shrinker">
+        </a>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid bg-light">
+        <div class="container">
+            <form action="/shortenUrl" method="post">
+
+                <div class="group">
+                    <input type="url" id="fullUrl" name="fullUrl" required="required" />
+                    <label for="fullUrl">Long URL</label>
+                    <div class="bar"></div>
+                </div>
+                {{!-- <input type="submit" value="Shorten"> --}}
+                {{!-- <label for="fullUrl" class="sr-only">LONG URL</label>
+                <input type="url" placeholder="Long URL" name="fullUrl" id="fullUrl"> --}}
+
+            </form>
+            <br>
+            <table class="table table-striped table-responsive-md" style="max-width:fit-content;">
+                <tr>
+                    <th>Full URL</th>
+                    <th>Shorten</th>
+                    <th>Clicks</th>
+                </tr>
+                {{#each shortUrls}}
+                <tr>
+                    <td><a href="{{this.full}}">{{this.full}}</a></td>
+                    <td><a href="{{this.short}}">{{this.short}}</a></td>
+                    <td><span class="badge badge-primary xl" style="font-size: 17px;">{{this.clicks}}</span></td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+
+</body>
+
 </html>
