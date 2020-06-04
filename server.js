@@ -41,5 +41,5 @@ app.get('/:shortUrl', async (req, res) => {
     res.redirect(shortUrl.full)
 })
 
-app.listen(5000, () => console.log('Listeninig on Port 3000'));
+app.listen(5000, () => console.log('Listeninig on Port 5000'));
 // app.listen(process.env.PORT || 5000);
