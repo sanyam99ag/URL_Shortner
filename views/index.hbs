@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Idex File</title>
+</head>
+<body>
+    
+    <h1>URL Shortener</h1>
+    <form action="/shortenUrl" method="post">
+        <label for="fullUrl" class="sr-only">LONG URL</label>
+        <input type="url" name="fullUrl" id="fullUrl">
+        <input type="submit" value="Shorten">
+    </form>
+    <br>
+    <table>
+        <tr>
+            <th> || Full URL</th>
+            <th> || Shorten</th>
+            <th> || Clicks</th>
+        </tr>
+        {{#each shortUrls}}
+            <tr>
+                <td> || <a href="{{this.full}}">{{this.full}}</a></td>
+                <td> || <a href="{{this.short}}">{{this.short}}</a></td>
+                <td> || <a href="{{this.clicks}}"></a>{{this.clicks}}</td>
+            </tr>
+        {{/each}}
+        
+    </table>
+    
+</body> 
+</html>
